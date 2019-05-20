@@ -8,6 +8,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import './App.css';
+import { green } from '@material-ui/core/colors';
 
 function TabContainer(props) {
   return (
@@ -511,6 +512,13 @@ class App extends Component {
                             },
                             explorer: {
                               actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
                             }
                           }}
                           rootProps={{ 'data-testid': '2' }}
@@ -555,6 +563,13 @@ class App extends Component {
                             },
                             explorer: {
                               actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
                             }
                           }}
                           rootProps={{ 'data-testid': '2' }}
@@ -599,6 +614,13 @@ class App extends Component {
                             },
                             explorer: {
                               actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
                             }
                           }}
                           rootProps={{ 'data-testid': '2' }}
@@ -643,6 +665,13 @@ class App extends Component {
                             },
                             explorer: {
                               actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
                             }
                           }}
                           rootProps={{ 'data-testid': '2' }}
