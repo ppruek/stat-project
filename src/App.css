@@ -24,10 +24,10 @@
   color: #61dafb;
 }
 
-/* .zoom:hover {
+.zoom:hover {
   -webkit-transform: scale(4); 
   transform: scale(4); 
-} */
+}
 
 #grad {
   color: white;
