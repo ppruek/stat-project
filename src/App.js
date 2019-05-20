@@ -91,7 +91,7 @@ class App extends Component {
                     {
                       this.state.valueGDP === 0 && <TabContainer>
                         <Chart
-                          width={'900spx'}
+                          width={'645px'}
                           height={'375px'}
                           chartType="GeoChart"
                           data={[['Province', 'GDP'], ['Chon Buri', 4801.558],	['Rayong', 6727.252],	
