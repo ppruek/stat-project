@@ -71,10 +71,10 @@ class App extends Component {
               variant="scrollable"
               scrollButtons="auto"
             >
-              <Tab label="Geo Chart" style={{width: '25%', margin: 'auto'}}/>
-              <Tab label="Bar chart" style={{width: '25%', margin: 'auto'}}/>
-              <Tab label="Pie Chart" style={{width: '25%', margin: 'auto'}}/>
-              <Tab label="Time Series" style={{width: '25%', margin: 'auto'}}/>
+              <Tab label="General" style={{width: '25%', margin: 'auto'}}/>
+              <Tab label="Overview Budget" style={{width: '25%', margin: 'auto'}}/> {/* Time series */}
+              <Tab label="Budget Distribution" style={{width: '25%', margin: 'auto'}}/> { /* Pie */}
+              <Tab label="Budget Allocation" style={{width: '25%', margin: 'auto'}}/> {/* Bar */}
             </Tabs>
           </AppBar>
           
@@ -85,7 +85,7 @@ class App extends Component {
                   <div style={{width: '96%'}}>
                   <Card>
                     <CardHeader
-                      title="Perspective of each city"
+                      title="Overview Eastern Region"
                       subheader="Year Information 2561 - 2562"
                     />
                   <div class="zoom"  style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
@@ -172,18 +172,378 @@ class App extends Component {
                       scrollButtons="auto"
                       style={{display: 'flex', margin: 'auto'}}
                     >
-                      <Tab label="Population" />
-                      <Tab label="City Budget" />
-                      <Tab label="MAC Budget" />
+                      <Tab label="ประชากร" />
+                      <Tab label="งบประมาณจังหวัด" />
+                      <Tab label="งบประมาณกระทรวงเกษตรและสหกรณ์" />
                     </Tabs>
                   </AppBar>
                   </Card>
                   
                   </div>
                 </TabContainer>
-              } 
+              }
               {
                 this.state.valueCat === 1 && 
+                <TabContainer>
+                  <div style={{width: '96%'}}>
+                  <Card>
+                    <CardHeader
+                      title="Budget Variation Rate and Trendline"
+                      subheader="Shows all budget of each country in 2547 - 2562"
+                    />
+                  <div style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
+                    {
+                      this.state.valueGDP === 0 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="LineChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Year', 'Budget'],
+                            [2547,147.880473],
+                            [2548,169.898087],
+                            [2549,263.863673],
+                            [2550,418.245615],
+                            [2551,384.96894],
+                            [2552,172.82059],
+                            [2553,473.3295],
+                            [2554,1212.111538],
+                            [2555,2373.592334],
+                            [2556,10520.593054],
+                            [2557,1205.452833],
+                            [2558,750.505423],
+                            [2559,572.0142],
+                            [2560,631.3966],
+                            [2561,1417.0282],
+                            [2562,1348.9021]
+                          ]}
+                          options={{
+                            hAxis: {
+                              title: 'Year',
+                            },
+                            vAxis: {
+                              title: 'Budget (Million Baht)',
+                            },
+                            series: {
+                              1: { curveType: 'function' },
+                            },
+                            explorer: {
+                              actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
+                            }
+                          }}
+                          rootProps={{ 'data-testid': '2' }}
+                        />
+                      </TabContainer>
+                    }
+                    {
+                      this.state.valueGDP === 1 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="LineChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Year', 'Budget'],
+                            [2547,179.746356],
+                            [2548,263.620717],
+                            [2549,191.971794],
+                            [2550,755.304377],
+                            [2551,1037.951132],
+                            [2552,696.334408],
+                            [2553,491.465457],
+                            [2554,533.679994],
+                            [2555,259.682095],
+                            [2556,181.257454],
+                            [2557,170.764123],
+                            [2558,347.882511],
+                            [2559,565.8767],
+                            [2560,835.56011],
+                            [2561,1075.2048],
+                            [2562,574.015]
+                          ]}
+                          options={{
+                            hAxis: {
+                              title: 'Year',
+                            },
+                            vAxis: {
+                              title: 'Budget (Million Baht)',
+                            },
+                            series: {
+                              1: { curveType: 'function' },
+                            },
+                            explorer: {
+                              actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
+                            }
+                          }}
+                          rootProps={{ 'data-testid': '2' }}
+                        />
+                      </TabContainer>
+                    }
+                    {
+                      this.state.valueGDP === 2 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="LineChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Year', 'Budget'],
+                            [2547,152.145509],
+                            [2548,185.228819],
+                            [2549,210.426275],
+                            [2550,259.519332],
+                            [2551,308.408961],
+                            [2552,335.7463],
+                            [2553,241.746962],
+                            [2554,994.382445],
+                            [2555,2787.440897],
+                            [2556,1596.719613],
+                            [2557,1696.189523],
+                            [2558,802.258751],
+                            [2559,1132.86044],
+                            [2560,956.0565],
+                            [2561,1509.4408],
+                            [2562,1734.1708]
+                          ]}
+                          options={{
+                            hAxis: {
+                              title: 'Year',
+                            },
+                            vAxis: {
+                              title: 'Budget (Million Baht)',
+                            },
+                            series: {
+                              1: { curveType: 'function' },
+                            },
+                            explorer: {
+                              actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
+                            }
+                          }}
+                          rootProps={{ 'data-testid': '2' }}
+                        />
+                      </TabContainer>
+                    }
+                    {
+                      this.state.valueGDP === 3 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="LineChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Year', 'Budget'],
+                            [2547,140.489245],
+                            [2548,152.876356],
+                            [2549,225.10545],
+                            [2550,325.981056],
+                            [2551,246.307501],
+                            [2552,322.617884],
+                            [2553,240.09431],
+                            [2554,351.57008],
+                            [2555,165.842496],
+                            [2556,151.886439],
+                            [2557,219.011843],
+                            [2558,255.22356],
+                            [2559,210.00324],
+                            [2560,231.2664],
+                            [2561,325.144],
+                            [2562,543.3894]
+                          ]}
+                          options={{
+                            hAxis: {
+                              title: 'Year',
+                            },
+                            vAxis: {
+                              title: 'Budget (Million Baht)',
+                            },
+                            series: {
+                              1: { curveType: 'function' },
+                            },
+                            explorer: {
+                              actions: ['dragToZoom', 'rightClickToReset'] 
+                            },
+                            trendlines: {
+                              0: {
+                                type: 'exponential',
+                                visibleInLegend: true,
+                                color: 'green'
+                              }
+                            }
+                          }}
+                          rootProps={{ 'data-testid': '2' }}
+                        />
+                      </TabContainer>
+                    }
+                  </div>
+                  <AppBar position="static" color="default">
+                    <Tabs
+                      value={this.state.valueGDP}
+                      onChange={this.handleChangeGDP}
+                      indicatorColor="primary"
+                      textColor="primary"
+                      variant="scrollable"
+                      scrollButtons="auto"
+                      style={{display: 'flex', margin: 'auto'}}
+                    >
+                      <Tab label="Chonburi" />
+                      <Tab label="Rayong" />
+                      <Tab label="Chanthaburi" />
+                      <Tab label="Trat" />
+                    </Tabs>
+                  </AppBar>
+                  </Card>
+                  
+                  </div>
+                </TabContainer>
+              }  
+              {
+                this.state.valueCat === 2 && 
+                <TabContainer>
+                  <div style={{width: '96%'}}>
+                  <Card>
+                    <CardHeader
+                      title="Distribution ratio of Department in Ministry of Agriculture"
+                      subheader="Shows distribution of budget in each department w/o Royal Irrigation Department"
+                    />
+                  <div style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
+                    {
+                      this.state.valueGDP === 0 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="PieChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Department', 'Budget Ratio'],
+                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 147200],
+                            ['กรมประมง', 6449800],
+                            ['กรมปศุสัตว์', 14973000],
+                            ['กรมพัฒนาที่ดิน', 17409000],
+                            ['กรมส่งเสริมการเกษตร',303000],
+                            ['กรมส่งเสริมสหกรณ์',93300],
+                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',1635800]
+                          ]}
+                          options={{
+                            title: 'Budget Ratio in each deaprtment of Chonburi',
+                          }}
+                        />
+                      </TabContainer>
+                    }
+                    {
+                      this.state.valueGDP === 1 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="PieChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Department', 'Budget Ratio'],
+                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 15800],
+                            ['กรมประมง', 3551300],
+                            ['กรมปศุสัตว์', 1857000],
+                            ['กรมพัฒนาที่ดิน', 11493000],
+                            ['กรมส่งเสริมการเกษตร',2318900],
+                            ['กรมส่งเสริมสหกรณ์',220800],
+                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',73600]
+                          ]}
+                          options={{
+                            title: 'Budget Ratio in each deaprtment of Rayong',
+                          }}
+                        />
+                      </TabContainer>
+                    }
+                    {
+                      this.state.valueGDP === 2 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="PieChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Department', 'Budget Ratio'],
+                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 1526000],
+                            ['กรมประมง', 2984400],
+                            ['กรมปศุสัตว์', 1805900],
+                            ['กรมพัฒนาที่ดิน', 49488000],
+                            ['กรมส่งเสริมการเกษตร',2759300],
+                            ['กรมส่งเสริมสหกรณ์',2506800],
+                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',36800]
+                          ]}
+                          options={{
+                            title: 'Budget Ratio in each deaprtment of Chanthaburi',
+                          }}
+                        />
+                      </TabContainer>
+                    }
+                    {
+                      this.state.valueGDP === 3 && <TabContainer>
+                        <Chart
+                          width={'645px'}
+                          height={'375px'}
+                          chartType="PieChart"
+                          loader={<div>Loading Chart</div>}
+                          data={[
+                            ['Department', 'Budget Ratio'],
+                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 28600],
+                            ['กรมประมง', 210000],
+                            ['กรมปศุสัตว์', 1124000],
+                            ['กรมพัฒนาที่ดิน', 36811400],
+                            ['กรมส่งเสริมการเกษตร',508800],
+                            ['กรมส่งเสริมสหกรณ์',70400],
+                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',36800]
+                          ]}
+                          options={{
+                            title: 'Budget Ratio in each deaprtment of Trat',
+                          }}
+                        />
+                      </TabContainer>
+                    }
+                  </div>
+                  <AppBar position="static" color="default">
+                    <Tabs
+                      value={this.state.valueGDP}
+                      onChange={this.handleChangeGDP}
+                      indicatorColor="primary"
+                      textColor="primary"
+                      variant="scrollable"
+                      scrollButtons="auto"
+                      style={{display: 'flex', margin: 'auto'}}
+                    >
+                      <Tab label="Chonburi" />
+                      <Tab label="Rayong" />
+                      <Tab label="Chanthaburi" />
+                      <Tab label="Trat" />
+                    </Tabs>
+                  </AppBar>
+                  </Card>
+                  
+                  </div>
+                </TabContainer>
+              }  
+              {
+                this.state.valueCat === 3 && 
                 <TabContainer>
                   <div style={{width: '96%'}}>
                   <Card>
@@ -339,367 +699,8 @@ class App extends Component {
                   
                   </div>
                 </TabContainer>
-              } 
-              {
-                this.state.valueCat === 2 && 
-                <TabContainer>
-                  <div style={{width: '96%'}}>
-                  <Card>
-                    <CardHeader
-                      title="Ratio of Department in Ministry of Agriculture"
-                      subheader="Shows distribution of budget in each department w/o Royal Irrigation Department"
-                    />
-                  <div style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
-                    {
-                      this.state.valueGDP === 0 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="PieChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Department', 'Budget Ratio'],
-                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 147200],
-                            ['กรมประมง', 6449800],
-                            ['กรมปศุสัตว์', 14973000],
-                            ['กรมพัฒนาที่ดิน', 17409000],
-                            ['กรมส่งเสริมการเกษตร',303000],
-                            ['กรมส่งเสริมสหกรณ์',93300],
-                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',1635800]
-                          ]}
-                          options={{
-                            title: 'Budget Ratio in each deaprtment of Chonburi',
-                          }}
-                        />
-                      </TabContainer>
-                    }
-                    {
-                      this.state.valueGDP === 1 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="PieChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Department', 'Budget Ratio'],
-                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 15800],
-                            ['กรมประมง', 3551300],
-                            ['กรมปศุสัตว์', 1857000],
-                            ['กรมพัฒนาที่ดิน', 11493000],
-                            ['กรมส่งเสริมการเกษตร',2318900],
-                            ['กรมส่งเสริมสหกรณ์',220800],
-                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',73600]
-                          ]}
-                          options={{
-                            title: 'Budget Ratio in each deaprtment of Rayong',
-                          }}
-                        />
-                      </TabContainer>
-                    }
-                    {
-                      this.state.valueGDP === 2 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="PieChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Department', 'Budget Ratio'],
-                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 1526000],
-                            ['กรมประมง', 2984400],
-                            ['กรมปศุสัตว์', 1805900],
-                            ['กรมพัฒนาที่ดิน', 49488000],
-                            ['กรมส่งเสริมการเกษตร',2759300],
-                            ['กรมส่งเสริมสหกรณ์',2506800],
-                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',36800]
-                          ]}
-                          options={{
-                            title: 'Budget Ratio in each deaprtment of Chanthaburi',
-                          }}
-                        />
-                      </TabContainer>
-                    }
-                    {
-                      this.state.valueGDP === 3 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="PieChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Department', 'Budget Ratio'],
-                            ['สํานักงานปลัดกระทรวงเกษตรและสหกรณ์', 28600],
-                            ['กรมประมง', 210000],
-                            ['กรมปศุสัตว์', 1124000],
-                            ['กรมพัฒนาที่ดิน', 36811400],
-                            ['กรมส่งเสริมการเกษตร',508800],
-                            ['กรมส่งเสริมสหกรณ์',70400],
-                            ['สํานักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม',36800]
-                          ]}
-                          options={{
-                            title: 'Budget Ratio in each deaprtment of Trat',
-                          }}
-                        />
-                      </TabContainer>
-                    }
-                  </div>
-                  <AppBar position="static" color="default">
-                    <Tabs
-                      value={this.state.valueGDP}
-                      onChange={this.handleChangeGDP}
-                      indicatorColor="primary"
-                      textColor="primary"
-                      variant="scrollable"
-                      scrollButtons="auto"
-                      style={{display: 'flex', margin: 'auto'}}
-                    >
-                      <Tab label="Chonburi" />
-                      <Tab label="Rayong" />
-                      <Tab label="Chanthaburi" />
-                      <Tab label="Trat" />
-                    </Tabs>
-                  </AppBar>
-                  </Card>
-                  
-                  </div>
-                </TabContainer>
               }
-              {
-                this.state.valueCat === 3 && 
-                <TabContainer>
-                  <div style={{width: '96%'}}>
-                  <Card>
-                    <CardHeader
-                      title="Tax Tribution"
-                      subheader="Shows Tax's Tribution of each provinces in a selected Northen Europe"
-                    />
-                  <div style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
-                    {
-                      this.state.valueGDP === 0 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="LineChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Year', 'Budget'],
-                              [2547,147880473],
-                              [2548,169898087],
-                              [2549,263863673],
-                              [2550,418245615],
-                              [2551,384968940],
-                              [2552,172820590],
-                              [2553,473329500],
-                              [2554,1212111538],
-                              [2555,2373592334],
-                              [2556,10520593054],
-                              [2557,1205452833],
-                              [2558,750505423],
-                              [2559,572014200],
-                              [2560,631396600],
-                              [2561,1417028200],
-                              [2562,1348902100]
-                          ]}
-                          options={{
-                            hAxis: {
-                              title: 'Year',
-                            },
-                            vAxis: {
-                              title: 'Budget',
-                            },
-                            series: {
-                              1: { curveType: 'function' },
-                            },
-                            explorer: {
-                              actions: ['dragToZoom', 'rightClickToReset'] 
-                            },
-                            trendlines: {
-                              0: {
-                                type: 'exponential',
-                                visibleInLegend: true,
-                                color: 'green'
-                              }
-                            }
-                          }}
-                          rootProps={{ 'data-testid': '2' }}
-                        />
-                      </TabContainer>
-                    }
-                    {
-                      this.state.valueGDP === 1 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="LineChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Year', 'Budget'],
-                            [2547,179746356],
-                            [2548,263620717],
-                            [2549,191971794],
-                            [2550,755304377],
-                            [2551,1037951132],
-                            [2552,696334408],
-                            [2553,491465457],
-                            [2554,533679994],
-                            [2555,259682095],
-                            [2556,181257454],
-                            [2557,170764123],
-                            [2558,347882511],
-                            [2559,565876700],
-                            [2560,835560110],
-                            [2561,1075204800],
-                            [2562,574015000]
-                          ]}
-                          options={{
-                            hAxis: {
-                              title: 'Year',
-                            },
-                            vAxis: {
-                              title: 'Budget',
-                            },
-                            series: {
-                              1: { curveType: 'function' },
-                            },
-                            explorer: {
-                              actions: ['dragToZoom', 'rightClickToReset'] 
-                            },
-                            trendlines: {
-                              0: {
-                                type: 'exponential',
-                                visibleInLegend: true,
-                                color: 'green'
-                              }
-                            }
-                          }}
-                          rootProps={{ 'data-testid': '2' }}
-                        />
-                      </TabContainer>
-                    }
-                    {
-                      this.state.valueGDP === 2 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="LineChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Year', 'Budget'],
-                            [2547,152145509],
-                            [2548,185228819],
-                            [2549,210426275],
-                            [2550,259519332],
-                            [2551,308408961],
-                            [2552,335746300],
-                            [2553,241746962],
-                            [2554,994382445],
-                            [2555,2787440897],
-                            [2556,1596719613],
-                            [2557,1696189523],
-                            [2558,802258751],
-                            [2559,1132860440],
-                            [2560,956056500],
-                            [2561,1509440800],
-                            [2562,1734170800]
-                          ]}
-                          options={{
-                            hAxis: {
-                              title: 'Year',
-                            },
-                            vAxis: {
-                              title: 'Budget',
-                            },
-                            series: {
-                              1: { curveType: 'function' },
-                            },
-                            explorer: {
-                              actions: ['dragToZoom', 'rightClickToReset'] 
-                            },
-                            trendlines: {
-                              0: {
-                                type: 'exponential',
-                                visibleInLegend: true,
-                                color: 'green'
-                              }
-                            }
-                          }}
-                          rootProps={{ 'data-testid': '2' }}
-                        />
-                      </TabContainer>
-                    }
-                    {
-                      this.state.valueGDP === 3 && <TabContainer>
-                        <Chart
-                          width={'645px'}
-                          height={'375px'}
-                          chartType="LineChart"
-                          loader={<div>Loading Chart</div>}
-                          data={[
-                            ['Year', 'Budget'],
-                            [2547,140489245],
-                            [2548,152876356],
-                            [2549,225105450],
-                            [2550,325981056],
-                            [2551,246307501],
-                            [2552,322617884],
-                            [2553,240094310],
-                            [2554,351570080],
-                            [2555,165842496],
-                            [2556,151886439],
-                            [2557,219011843],
-                            [2558,255223560],
-                            [2559,210003240],
-                            [2560,231266400],
-                            [2561,325144000],
-                            [2562,543389400]
-                          ]}
-                          options={{
-                            hAxis: {
-                              title: 'Year',
-                            },
-                            vAxis: {
-                              title: 'Budget',
-                            },
-                            series: {
-                              1: { curveType: 'function' },
-                            },
-                            explorer: {
-                              actions: ['dragToZoom', 'rightClickToReset'] 
-                            },
-                            trendlines: {
-                              0: {
-                                type: 'exponential',
-                                visibleInLegend: true,
-                                color: 'green'
-                              }
-                            }
-                          }}
-                          rootProps={{ 'data-testid': '2' }}
-                        />
-                      </TabContainer>
-                    }
-                  </div>
-                  <AppBar position="static" color="default">
-                    <Tabs
-                      value={this.state.valueGDP}
-                      onChange={this.handleChangeGDP}
-                      indicatorColor="primary"
-                      textColor="primary"
-                      variant="scrollable"
-                      scrollButtons="auto"
-                      style={{display: 'flex', margin: 'auto'}}
-                    >
-                      <Tab label="Chonburi" />
-                      <Tab label="Rayong" />
-                      <Tab label="Chanthaburi" />
-                      <Tab label="Trat" />
-                    </Tabs>
-                  </AppBar>
-                  </Card>
-                  
-                  </div>
-                </TabContainer>
-              }  
+              
           </div>
         </div>
       </div>
