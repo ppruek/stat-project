@@ -88,7 +88,7 @@ class App extends Component {
                       title="Overview Eastern Region"
                       subheader="Year Information 2561 - 2562"
                     />
-                  <div class="zoom"  style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
+                  <div class="zoom"  style={{display: 'flex', justifyContent: 'space-around', margin: 'auto' }}>
                     {
                       this.state.valueGDP === 0 && <TabContainer>
                         <Chart
