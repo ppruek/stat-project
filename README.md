@@ -1,3 +1,5 @@
+This project is part of FinalProject in 01204314 Statics for Computer Engineering Applications.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
