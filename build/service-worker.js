@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ppruek/ppruek.github.io/precache-manifest.9036af6751bfdfd5fac124032946d38f.js"
+  "/ppruek/ppruek.github.io/precache-manifest.5a9ec01fc9687f34471ff5272f858b78.js"
 );
 
 workbox.clientsClaim();
