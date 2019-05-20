@@ -2,10 +2,6 @@
   "name": "statweb",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-=======
-  "homepage": "https://github.com/ppruek/ppruek.github.io/stat-project",
->>>>>>> 8d02b872995082018cc7c1e3984e607a1b87a8b9
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "gh-pages": "^2.0.1",
