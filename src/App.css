@@ -31,7 +31,12 @@
 
 #grad {
   color: white;
-  background-image: linear-gradient(to right,#71873f, #688557,#abbe99, #e0b87e ,#a36627);
+  /* background-image: linear-gradient(to right,#71873f, #688557,#abbe99, #e0b87e ,#a36627); */
+  background-image: url(./bg1.jpg);
+  background-size:     cover;    
+  background-repeat:   no-repeat;
+  background-position: center center;
+  opacity: 0.9;
 }
 
 #myHead {

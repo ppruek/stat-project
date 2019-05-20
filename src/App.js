@@ -467,7 +467,7 @@ class App extends Component {
                   <div style={{width: '96%'}}>
                   <Card>
                     <CardHeader
-                      title="Tax Tribution"
+                      title="Ratio of Department in Ministry of Agriculture"
                       subheader="Shows Tax's Tribution of each provinces in a selected Northen Europe"
                     />
                   <div style={{display: 'flex', justifyContent: 'space-around', margin: 'auto'}}>
